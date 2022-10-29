@@ -73,8 +73,8 @@ static unsigned int cursorthickness = 2;
  *    Bold affects lines thickness if boxdraw_bold is not 0. Italic is ignored.
  * 0: disable (render all U25XX glyphs normally from the font).
  */
-const int boxdraw = 0;
-const int boxdraw_bold = 0;
+const int boxdraw = 1;
+const int boxdraw_bold = 1;
 
 /* braille (U28XX):  1: render as adjacent "pixels",  0: use font */
 const int boxdraw_braille = 0;
@@ -86,7 +86,7 @@ const int boxdraw_braille = 0;
 static int bellvolume = 0;
 
 /* default TERM value */
-char *termname = "st-256color";
+char *termname = "st";
 
 /*
  * spaces per tab
@@ -115,7 +115,7 @@ static const char *colorname[] = {
 	"#bd93f9",
 	"#ff79c6",
 	"#8be9fd",
-	"#f8f8f2",
+	"#6272a4",
 
 	/* 8 bright colors */
 	"#6272a4",
@@ -132,7 +132,7 @@ static const char *colorname[] = {
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#cccccc",
 	"#555555",
-	"#f8f8f2", /* default foreground colour */
+	"#ffffff", /* default foreground colour */
 	"#282a36", /* default background colour */
 };
 
