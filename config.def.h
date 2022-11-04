@@ -60,7 +60,7 @@ static double maxlatency = 33;
  * blinking timeout (set to 0 to disable blinking) for the terminal blinking
  * attribute.
  */
-static unsigned int blinktimeout = 800;
+static unsigned int blinktimeout = 600;
 
 /*
  * thickness of underline and bar cursors
@@ -147,13 +147,20 @@ unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
 
 /*
- * Default shape of cursor
- * 2: Block ("█")
- * 4: Underline ("_")
- * 6: Bar ("|")
- * 7: Snowman ("☃")
+* https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h4-Functions-using-CSI-_-ordered-by-the-final-character-lparen-s-rparen:CSI-Ps-SP-q.1D81
+* Default style of cursor
+* 0: blinking block
+* 1: blinking block (default)
+* 2: steady block ("█")
+* 3: blinking underline
+* 4: steady underline ("_")
+* 5: blinking bar
+* 6: steady bar ("|")
+* 7: blinking st cursor
+* 8: steady st cursor
  */
-static unsigned int cursorshape = 6;
+static unsigned int cursorshape = 5;
+static Rune stcursor = 0x2603; /* snowman ("☃") */
 
 /*
  * Default columns and rows numbers
