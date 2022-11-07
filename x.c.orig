@@ -2151,7 +2151,8 @@ main(int argc, char *argv[])
 {
 	xw.l = xw.t = 0;
 	xw.isfixed = False;
-	xsetcursor(cursorstyle);
+	xsetcursor(cursorshape);
+	// xsetcursor(cursorstyle);
 
 	ARGBEGIN {
 	case 'a':
