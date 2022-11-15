@@ -60,7 +60,7 @@ static double maxlatency = 33;
  * blinking timeout (set to 0 to disable blinking) for the terminal blinking
  * attribute.
  */
-static unsigned int blinktimeout = 600;
+static unsigned int blinktimeout = 400;
 
 /*
  * thickness of underline and bar cursors
@@ -261,6 +261,8 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Return,      newterm,        {.i =  0} },
 	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
 	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
+	{ TERMMOD,              XK_k,           kscrollup,      {.i = -1} },
+	{ TERMMOD,              XK_j,           kscrolldown,    {.i = -1} },
 };
 
 /*
