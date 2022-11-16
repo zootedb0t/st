@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "VictorMono NF:pixelsize=18:antialias=true:autohint=true";
-static int borderpx = 2;
+static char *font = "JetBrainsMono Nerd Font:Regular:size=10:antialias=true:autohint=true";
+static int borderpx = 3;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -60,7 +60,7 @@ static double maxlatency = 33;
  * blinking timeout (set to 0 to disable blinking) for the terminal blinking
  * attribute.
  */
-static unsigned int blinktimeout = 400;
+static unsigned int blinktimeout = 350;
 
 /*
  * thickness of underline and bar cursors
@@ -261,8 +261,8 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Return,      newterm,        {.i =  0} },
 	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
 	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
-	{ TERMMOD,              XK_k,           kscrollup,      {.i = -1} },
-	{ TERMMOD,              XK_j,           kscrolldown,    {.i = -1} },
+	{ TERMMOD,              XK_K,           kscrollup,      {.i = -1} },
+	{ TERMMOD,              XK_J,           kscrolldown,    {.i = -1} },
 };
 
 /*
