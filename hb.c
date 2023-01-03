@@ -46,16 +46,18 @@ hb_font_t *
 hbfindfont(XftFont *match)
 {
 	for (int i = 0; i < hbfontslen; i++) {
-		if (hbfontcache[i].match == match)
+		if (hbfontcache[i].match == match) {
 			return hbfontcache[i].font;
+		}
 	}
 
 	/* Font not found in cache, caching it now. */
 	hbfontcache = realloc(hbfontcache, sizeof(HbFontMatch) * (hbfontslen + 1));
 	FT_Face face = XftLockFace(match);
 	hb_font_t *font = hb_ft_font_create(face, NULL);
-	if (font == NULL)
+	if (font == NULL) {
 		die("Failed to load Harfbuzz font.");
+	}
 
 	hbfontcache[hbfontslen].match = match;
 	hbfontcache[hbfontslen].font = font;
@@ -95,15 +97,17 @@ hbtransform(XftGlyphFontSpec *specs, const Glyph *glyphs, size_t len, int x, int
 
 	/* Apply the transformation to glyph specs. */
 	for (int i = 0, specidx = 0; i < len; i++) {
-		if (glyphs[i].mode & ATTR_WDUMMY)
+		if (glyphs[i].mode & ATTR_WDUMMY) {
 			continue;
+		}
 		if (glyphs[i].mode & ATTR_BOXDRAW) {
 			specidx++;
 			continue;
 		}
 
-		if (codepoints[i] != specs[specidx].glyph)
+		if (codepoints[i] != specs[specidx].glyph) {
 			((Glyph *)glyphs)[i].mode |= ATTR_LIGA;
+		}
 
 		specs[specidx++].glyph = codepoints[i];
 	}
@@ -115,8 +119,9 @@ void
 hbtransformsegment(XftFont *xfont, const Glyph *string, hb_codepoint_t *codepoints, int start, int length)
 {
 	hb_font_t *font = hbfindfont(xfont);
-	if (font == NULL)
+	if (font == NULL) {
 		return;
+	}
 
 	Rune rune;
 	ushort mode = USHRT_MAX;
@@ -124,16 +129,17 @@ hbtransformsegment(XftFont *xfont, const Glyph *string, hb_codepoint_t *codepoin
 	hb_buffer_set_direction(buffer, HB_DIRECTION_LTR);
 
 	/* Fill buffer with codepoints. */
-	for (int i = start; i < (start+length); i++) {
+	for (int i = start; i < (start + length); i++) {
 		rune = string[i].u;
 		mode = string[i].mode;
-		if (mode & ATTR_WDUMMY)
+		if (mode & ATTR_WDUMMY) {
 			rune = 0x0020;
+		}
 		hb_buffer_add_codepoints(buffer, &rune, 1, 0, 1);
 	}
 
 	/* Shape the segment. */
-	hb_shape(font, buffer, features, sizeof(features)/sizeof(hb_feature_t));
+	hb_shape(font, buffer, features, sizeof(features) / sizeof(hb_feature_t));
 
 	/* Get new glyph info. */
 	hb_glyph_info_t *info = hb_buffer_get_glyph_infos(buffer, NULL);
@@ -141,7 +147,7 @@ hbtransformsegment(XftFont *xfont, const Glyph *string, hb_codepoint_t *codepoin
 	/* Write new codepoints. */
 	for (int i = 0; i < length; i++) {
 		hb_codepoint_t gid = info[i].codepoint;
-		codepoints[start+i] = gid;
+		codepoints[start + i] = gid;
 	}
 
 	/* Cleanup. */
