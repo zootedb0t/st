@@ -1,6 +1,6 @@
 ## st - simple terminal
 
-st is a simple terminal emulator for X which sucks less. This fork is based on st 0.9 and is heavily patched. The following patches have been applied.
+ST is a simple terminal emulator for X which sucks less. This fork is based on st 0.9 and is heavily patched. The following patches have been applied.
 
 <ul>
 <li>dont-cut-text</li>
@@ -20,6 +20,8 @@ st is a simple terminal emulator for X which sucks less. This fork is based on s
 <li>st-xresources</li>
 </ul>
 
+All patches can be found in patch directory.
+
 ## Requirements
 
 In order to build st you need the Xlib header files.
@@ -33,6 +35,9 @@ Afterwards enter the following command to build and install st (if
 necessary as root):
 
     make clean install
+
+Configuration is done through modifying config.def.h file.
+After modifying to remove config.h, and recompile using above command.
 
 ## Running st
 
