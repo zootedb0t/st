@@ -2441,7 +2441,7 @@ void
 kpress(XEvent *ev)
 {
 	XKeyEvent *e = &ev->xkey;
-	KeySym ksym;
+	KeySym ksym = NoSymbol;
 	char buf[64], *customkey;
 	int len;
 	Rune c;
@@ -2460,6 +2460,9 @@ kpress(XEvent *ev)
 
 	if (xw.ime.xic) {
 		len = XmbLookupString(xw.ime.xic, e, buf, sizeof buf, &ksym, &status);
+		if (status == XBufferOverflow) {
+			return;
+		}
 	} else {
 		len = XLookupString(e, buf, sizeof buf, &ksym, NULL);
 	}
