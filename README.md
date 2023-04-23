@@ -1,5 +1,5 @@
-## st - simple terminal
-ST is a simple terminal emulator for X which [sucks-less](https://git.suckless.org/st/). The following patches have been incorporated in this build.
+## st - simple terminal ![st](https://img.shields.io/static/v1?label=st&message=0.9&color=blue&style=flat-square)
+`st` is a simple terminal emulator for X which [sucks-less](https://git.suckless.org/st/). The following patches have been incorporated in this build.
 
 <details><summary>Click to view</summary>
 
@@ -29,7 +29,7 @@ ST is a simple terminal emulator for X which [sucks-less](https://git.suckless.o
 
 ## Requirements
 
-In order to build st you need the Xlib header files. `dmenu` for `linkhandler` scripts.
+In order to build st you need the Xlib header files. `dmenu` and `linkhandler` scripts.
 
 ## Installation
 
@@ -38,6 +38,8 @@ git clone https://github.com/zootedb0t/st.git
 cd st
 sudo make clean install
 ```
+
+Configuration is done through editing `config.def.h`.
 
 Edit `config.mk` to match your local setup (st is installed into
 the /usr/local namespace by default).
