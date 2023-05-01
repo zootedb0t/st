@@ -6,6 +6,13 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "Liberation Mono:pixelsize=16:antialias=true:autohint=true";
+/* Spare fonts */
+static char *font2[] = {
+  "Symbols Nerd Font:pixelsize=16:antialias=true:autohint=true",
+/*	"Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true", */
+/*	"Hack Nerd Font Mono:pixelsize=11:antialias=true:autohint=true", */
+};
+
 static int borderpx = 2;
 
 /*
@@ -270,9 +277,9 @@ static Shortcut shortcuts[] = {
 	{ MODKEY,               XK_u,           externalpipe,   {.v = openurlcmd} },
 	{ MODKEY,               XK_y,           externalpipe,   {.v = copyurlcmd} },
 	{ MODKEY,               XK_o,           externalpipe,   {.v = copyoutput} },
-  { MODKEY,		            XK_s,		        changealpha,	{.f = -0.05} },
-  { MODKEY,		            XK_a,		        changealpha,	{.f = +0.05} },
-  { MODKEY,		            XK_m,		        changealpha,	{.f = +2.00} },
+  { MODKEY,		            XK_s,		        changealpha,	  {.f = -0.05} },
+  { MODKEY,		            XK_a,		        changealpha,	  {.f = +0.05} },
+  { MODKEY,		            XK_m,		        changealpha,	  {.f = +2.00} },
 };
 
 /*

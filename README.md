@@ -17,6 +17,7 @@
 - [st-xresources-with-reload-signal](https://st.suckless.org/patches/xresources/) - Allow changing terminal colors,fonts etc. without `recompiling or restarting` `st` from `.xresource` file.
 - [st-blinking_cursor](https://st.suckless.org/patches/blinking_cursor/st-blinking_cursor-20211116-2f6e597.diff) - This patch allows the use of a blinking cursor. 
 - [st-xresources](https://st.suckless.org/patches/xresources/st-xresources-20200604-9ba7ecf.diff) - This patch adds the ability to configure st via `Xresources`.  At startup, st will read and apply the resources named in the resources[] array in `config.h`.
+- [st-font2](https://st.suckless.org/patches/font2/st-font2-0.8.5.diff) - This patch allows to add spare font besides default. Some glyphs can be not present in default font. For this glyphs st uses font-config and try to find them in font cache first.
 
 </details>
 
@@ -24,10 +25,13 @@
 
 - Fonts, colors etc. can be configured from `.Xresource` file. No need to `restart or recompile st`.
 - Texts don't cut while resizing terminal.
-- Support transparency while keeping text opaque. This is controlled by `alpha` variable in `config.def.h`
+- Support transparency while keeping text opaque. This is controlled by `alpha` variable in `config.def.h` or `.Xresources`.
 - Support font ligatures.
 - Select `url` from terminal window. Put `st-urlhandler` in your path variable. Use <kbd>alt+u</kbd> to open url and use <kbd>alt+y</kbd> to copy url.
 - Dynamic-color cursor support make terminal appealing and easy to follow cursor.
+- Support blinking cursor. Blink-rate is managed by `blinktimeout` variable in `config.def.h` or `.Xresource`.
+- St opacity can be changed without `restarting` or `recompiling`.
+- Support for spare font besides default. If some glyph is not present in default then this `spare` font will be used.
 
 ## Requirements
 
@@ -46,21 +50,32 @@ Configuration is done through editing `config.def.h`.
 Edit `config.mk` to match your local setup (st is installed into
 the /usr/local namespace by default).
 
-Afterwards enter the following command to build and install st (if
-necessary as root):
-
+Afterwards enter the following command to build and install st (if necessary as root):
 ```
 sudo make clean install
 ```
 
+## Keybindings
 
-## Running st
-If you did not install st with make clean install, you must compile
-the st terminfo entry with the following command:
+Default Keybindings:
+| Action                | Keys                   |
+|-----------------------|------------------------|
+| Copy                  | <kbd>ctrl+shift+c</kbd>|
+| Paste                 | <kbd>ctrl+shift+v</kbd>|
+| Increase transparency | <kbd>alt+s</kbd>       |
+| Decrease transparency | <kbd>alt+a</kbd>       |
+| Disable transparency  | <kbd>alt+m</kbd>       |
+| Open Url              | <kbd>alt+u</kbd>       |
+| Copy Url              | <kbd>alt+y</kbd>       |
+| Zoom in               | <kbd>ctrl+shift+.</kbd>|
+| Zoom out              | <kbd>ctrl+shift+,</kbd>|
 
-    tic -sx st.info
+Keybindings are modified by editing `shortcuts` array `config.def.h`.
 
-See the man page for additional details.
+```
+rm config.h
+sudo make clean install
+```
 
 ## Credits
 Based on Aurélien APTEL <aurelien dot aptel at gmail dot com> bt source code.
