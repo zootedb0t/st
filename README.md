@@ -67,10 +67,10 @@ Default Keybindings:
 | Disable transparency  | <kbd>alt+m</kbd>       |
 | Open Url              | <kbd>alt+u</kbd>       |
 | Copy Url              | <kbd>alt+y</kbd>       |
-| Zoom in               | <kbd>ctrl+shift+.</kbd>|
-| Zoom out              | <kbd>ctrl+shift+,</kbd>|
+| Zoom in               | <kbd>alt+.</kbd>       |
+| Zoom out              | <kbd>alt+,</kbd>       |
 
-Keybindings are modified by editing `shortcuts` array `config.def.h`.
+Keybindings are modified by editing `shortcuts` array in `config.def.h`.
 
 ```
 rm config.h

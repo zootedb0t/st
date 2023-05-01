@@ -9,8 +9,6 @@ static char *font = "Liberation Mono:pixelsize=16:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
   "Symbols Nerd Font:pixelsize=16:antialias=true:autohint=true",
-/*	"Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true", */
-/*	"Hack Nerd Font Mono:pixelsize=11:antialias=true:autohint=true", */
 };
 
 static int borderpx = 2;
@@ -264,8 +262,8 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ TERMMOD,              XK_period,      zoom,           {.f = +1} },
-	{ TERMMOD,              XK_comma,       zoom,           {.f = -1} },
+	{ MODKEY,               XK_period,      zoom,           {.f = +1} },
+	{ MODKEY,               XK_comma,       zoom,           {.f = -1} },
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
 	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
