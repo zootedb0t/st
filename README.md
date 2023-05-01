@@ -15,6 +15,8 @@
 - [st-ligatures-boxdraw](https://st.suckless.org/patches/ligatures/0.9/st-ligatures-boxdraw-20221120-0.9.diff) - Add support for ligatures.
 - [st-scrollback](https://st.suckless.org/patches/scrollback/) - Add `scrollback` support to terminal.
 - [st-xresources-with-reload-signal](https://st.suckless.org/patches/xresources/) - Allow changing terminal colors,fonts etc. without `recompiling or restarting` `st` from `.xresource` file.
+- [st-blinking_cursor](https://st.suckless.org/patches/blinking_cursor/st-blinking_cursor-20211116-2f6e597.diff) - This patch allows the use of a blinking cursor. 
+- [st-xresources](https://st.suckless.org/patches/xresources/st-xresources-20200604-9ba7ecf.diff) - This patch adds the ability to configure st via `Xresources`.  At startup, st will read and apply the resources named in the resources[] array in `config.h`.
 
 </details>
 
