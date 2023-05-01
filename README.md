@@ -76,6 +76,9 @@ Keybindings are modified by editing `shortcuts` array in `config.def.h`.
 rm config.h
 sudo make clean install
 ```
+## Screenshot
+![Screenshot_2023-05-01-06-31-42_](https://user-images.githubusercontent.com/62596687/235456160-56baadd5-2099-4ed1-9a84-59f6d9b0c5d6.png)
+
 
 ## Credits
 Based on Aurélien APTEL <aurelien dot aptel at gmail dot com> bt source code.
