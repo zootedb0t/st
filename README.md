@@ -1,4 +1,5 @@
 ## st - simple terminal ![st](https://img.shields.io/static/v1?label=st&message=0.9&color=blue&style=flat-square)
+
 `st` is a simple terminal emulator for X which [sucks-less](https://git.suckless.org/st/). The following patches have been incorporated in this build.
 
 <details><summary>Click to view</summary>
@@ -15,8 +16,8 @@
 - [st-ligatures-boxdraw](https://st.suckless.org/patches/ligatures/0.9/st-ligatures-boxdraw-20221120-0.9.diff) - Add support for ligatures.
 - [st-scrollback](https://st.suckless.org/patches/scrollback/) - Add `scrollback` support to terminal.
 - [st-xresources-with-reload-signal](https://st.suckless.org/patches/xresources/) - Allow changing terminal colors,fonts etc. without `recompiling or restarting` `st` from `.xresource` file.
-- [st-blinking_cursor](https://st.suckless.org/patches/blinking_cursor/st-blinking_cursor-20211116-2f6e597.diff) - This patch allows the use of a blinking cursor. 
-- [st-xresources](https://st.suckless.org/patches/xresources/st-xresources-20200604-9ba7ecf.diff) - This patch adds the ability to configure st via `Xresources`.  At startup, st will read and apply the resources named in the resources[] array in `config.h`.
+- [st-blinking_cursor](https://st.suckless.org/patches/blinking_cursor/st-blinking_cursor-20211116-2f6e597.diff) - This patch allows the use of a blinking cursor.
+- [st-xresources](https://st.suckless.org/patches/xresources/st-xresources-20200604-9ba7ecf.diff) - This patch adds the ability to configure st via `Xresources`. At startup, st will read and apply the resources named in the resources[] array in `config.h`.
 - [st-font2](https://st.suckless.org/patches/font2/st-font2-0.8.5.diff) - This patch allows to add spare font besides default. Some glyphs can be not present in default font. For this glyphs st uses font-config and try to find them in font cache first.
 
 </details>
@@ -51,6 +52,7 @@ Edit `config.mk` to match your local setup (st is installed into
 the /usr/local namespace by default).
 
 Afterwards enter the following command to build and install st (if necessary as root):
+
 ```
 sudo make clean install
 ```
@@ -58,6 +60,8 @@ sudo make clean install
 ## Keybindings
 
 Default Keybindings:
+
+<!-- prettier-ignore -->
 | Action                | Keys                   |
 |-----------------------|------------------------|
 | Copy                  | <kbd>ctrl+shift+c</kbd>|
@@ -76,9 +80,11 @@ Keybindings are modified by editing `shortcuts` array in `config.def.h`.
 rm config.h
 sudo make clean install
 ```
+
 ## Screenshot
+
 ![Screenshot_2023-05-01-06-31-42_](https://user-images.githubusercontent.com/62596687/235456160-56baadd5-2099-4ed1-9a84-59f6d9b0c5d6.png)
 
-
 ## Credits
+
 Based on Aurélien APTEL <aurelien dot aptel at gmail dot com> bt source code.
