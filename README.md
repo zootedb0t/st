@@ -19,6 +19,8 @@
 - [st-blinking_cursor](https://st.suckless.org/patches/blinking_cursor/st-blinking_cursor-20211116-2f6e597.diff) - This patch allows the use of a blinking cursor.
 - [st-xresources](https://st.suckless.org/patches/xresources/st-xresources-20200604-9ba7ecf.diff) - This patch adds the ability to configure st via `Xresources`. At startup, st will read and apply the resources named in the resources[] array in `config.h`.
 - [st-font2](https://st.suckless.org/patches/font2/st-font2-0.8.5.diff) - This patch allows to add spare font besides default. Some glyphs can be not present in default font. For this glyphs st uses font-config and try to find them in font cache first.
+- [st-desktopentry](https://st.suckless.org/patches/desktopentry/st-desktopentry-0.8.5.diff) - Creates a desktop-entry for st. This enables to find st in a graphical menu and to display it with a nice icon.
+- [st-netwmicon](https://st.suckless.org/patches/netwmicon/st-netwmicon-0.8.5-v2.diff) - Enables to set _NET_WM_ICON with a `png-image`.
 
 </details>
 
@@ -33,6 +35,7 @@
 - Support blinking cursor. Blink-rate is managed by `blinktimeout` variable in `config.def.h` or `.Xresource`.
 - St opacity can be changed without `restarting` or `recompiling`.
 - Support for spare font besides default. If some glyph is not present in default then this `spare` font will be used.
+- Create a desktop entry. This enables st in a graphical menu like `rofi`.
 
 ## Requirements
 
