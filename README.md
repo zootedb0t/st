@@ -46,10 +46,10 @@ In order to build st you need the Xlib header files. `dmenu` and `linkhandler` s
 ```
 git clone https://github.com/zootedb0t/st.git
 cd st
-sudo make clean install
+sudo make install
 ```
 
-Configuration is done through editing `config.def.h`.
+Configuration is done through editing `config.def.h`. Run `make clean` and `sudo make install` to recompile.
 
 Edit `config.mk` to match your local setup (st is installed into
 the /usr/local namespace by default).

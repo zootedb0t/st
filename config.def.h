@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "IntelOne Mono:pixelsize=18:antialias=true:autohint=true";
+static char *font = "SauceCodePro Nerd Font:pixelsize=18:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
   "SauceCodePro Nerd Font:pixelsize=18:antialias=true:autohint=true",
