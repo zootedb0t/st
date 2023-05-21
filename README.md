@@ -80,8 +80,8 @@ Default Keybindings:
 Keybindings are modified by editing `shortcuts` array in `config.def.h`.
 
 ```
-rm config.h
-sudo make clean install
+make clean
+sudo make install
 ```
 
 ## Screenshot
