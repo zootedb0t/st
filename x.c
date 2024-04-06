@@ -1877,6 +1877,9 @@ xseticontitle(char *p)
 	XTextProperty prop;
 	DEFAULT(p, opt_title);
 
+	if (p[0] == '\0')
+		p = opt_title;
+
 	if (Xutf8TextListToTextProperty(xw.dpy, &p, 1, XUTF8StringStyle,
 	                                &prop) != Success)
 		return;
@@ -1890,6 +1893,9 @@ xsettitle(char *p)
 {
 	XTextProperty prop;
 	DEFAULT(p, opt_title);
+
+	if (p[0] == '\0')
+		p = opt_title;
 
 	if (Xutf8TextListToTextProperty(xw.dpy, &p, 1, XUTF8StringStyle,
 	                                &prop) != Success)
