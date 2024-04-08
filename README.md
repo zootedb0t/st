@@ -1,4 +1,4 @@
-## st - simple terminal ![st](https://img.shields.io/static/v1?label=st&message=0.9&color=blue&style=flat-square)
+## st - simple terminal ![st](https://img.shields.io/static/v1?label=st&message=0.9.2&color=blue&style=flat-square)
 
 `st` is a simple terminal emulator for X which [sucks-less](https://git.suckless.org/st/). The following patches have been incorporated in this build.
 
